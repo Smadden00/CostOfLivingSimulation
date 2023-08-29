@@ -8,13 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,4 +17,147 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/*opening page*/
+
+.openingHeader{
+  font-family: Helvetica, Sans-Serif;
+  font-size: xx-large;
+}
+
+.openingDescription{
+  padding: 0px 100px;
+  text-align: center;
+}
+
+.openingButton{
+  padding: 15px 25px;
+  background-color: rgb(4, 180, 255);
+  border-radius: 10px;
+  border: 3px transparent solid;
+}
+
+.openingButton:hover{
+  border: 3px black solid;
+}
+
+/******* Simulations *******/
+
+.simulationTitle{
+  font-family: Helvetica, Sans-Serif;
+  font-size: xx-large;
+  padding-top: 15px;
+}
+
+.simulationDescription{
+  font-family: Helvetica, Sans-Serif;
+  font-size: large;
+}
+
+.creditsContainer{
+  font-family: Helvetica, Sans-Serif;
+  font-size: x-large;
+  padding-top: 20px;
+}
+
+/* Savings */
+
+.savingsNumber{
+  font-size: x-large;
+}
+
+.savingsTopRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.savingsBottomRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.savingsBottomRowSpacer{
+  width: 127px;
+  height: 10px;
+}
+
+.savingsContainer{
+  padding-top: 30px;
+}
+
+.savingsForegroundBar{
+  height: 22px;
+  background-color: rgb(4, 180, 255);
+}
+
+/* Resources */
+
+.resourceContainer{
+  padding-top: 15px;
+}
+
+.resourceDisplay{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.resourceNumber{
+  font-size: x-large;
+}
+
+.dynamicDisplay{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buttonsContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.button{
+  width: 40px;
+  padding: 10px 30px 10px 10px;
+  border-radius: 20px;
+  border: 2px transparent solid;
+}
+
+.button:hover{
+  border: 2px black solid;
+  background-color: rgb(4, 180, 255);
+}
+
+.backgroundBar{
+  margin-top: -13px;
+  margin-left: 15px;
+  width: 475px;
+  height: 26px;
+  position: absolute;
+  background-color: #dfdfdf;
+  border: 2px black solid;
+}
+
+.foregroundBar{
+  margin-top: -11px;
+  margin-left: 17px;
+  height: 22px;
+  position: absolute;
+  background-color: rgb(4, 180, 255);
+}
+
+/* Next buttons */
+.nextButton{
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
 }
