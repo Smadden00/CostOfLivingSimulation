@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(13);
+    const [credits, setCredits]=useState(10);
     
     const searchParams = useSearchParams();
     const creditsFromLastMonth = searchParams.get('creditsFromLastMonth');
@@ -15,16 +15,29 @@ export default function FirstSimulation() {
         setCredits(credits+Number(creditsFromLastMonth));
     }, []);
 
+    const resourcesData=[
+        {creditType: 'Housing', descriptionArray: ['You have no housing.', 'You have a small 1-bedroom apartment with no yard.', 'You have a 2-bedroom apartment with a small yard.', 'You have a 3-bedroom house with a spacious yard.']},
+        {creditType: 'Transportation', descriptionArray: ['You have no access to transportation.', 'You have limited access to public transit.', 'You have access to bikes and public transit.', 'You have access to a car.']},
+        {creditType: 'Utilities', descriptionArray: ['You have no electric, heating, A/C, hot water, or wifi.', 'You have electric and unrelieble heating. You have no hot water, A/C, or wifi.', 'You have electric, heating, low speed wifi, and unreliable hot water. You have no A/C.', 'You have electric, heating, A/C, hot water, and high speed wifi.']},
+        {creditType: 'Education', descriptionArray: ['Your children have no education.', 'Your first grader goes to public school, but you have no day care for your youngest.','Your first grader goes to public school, and you have morning pre-k for your youngest.','Your first grader goes to public school, and you have all day pre-k for your youngest.']},
+        {creditType: 'Health Care', descriptionArray: ['Your family has no health care coverage.','Your children have health care coverage with a very high deductible.','Your children and one parent has health care coverage.','Everyone in your family has health care coverage.']},
+        {creditType: 'Food', descriptionArray: ['Your family struggles to get any food each day.','Your family reliable gets 2 meals a day with limited access to fresh produce.','Your family gets 3 meals a day most days of the week. You have limited access to fresh produce.','Your entire family gets 3 health meals a day.']},
+    ]
+
+    const resourceList = resourcesData.map((resourceObject, i)=> {
+        return <Resource dataObject={resourceObject} numCredits={credits} setCredits={setCredits} key={i}/>
+    });
+
     return (
         <main className="flex min-h-screen flex-col items-center">
             <h1 className='simulationTitle'>Simulation 2</h1>
-            <h2 className='simulationDescription'>The next month your spouse breaks their leg. You have fewer credits than last month.</h2>
-            <div className='creditsContainer'>You have {credits} credits left to spend this month.</div>
+            <h2 className='simulationDescription'>Your spouse has just lost their job, so you have less income than last month. Hopefully you have savings left over from last month.</h2>
+            <div className='creditsContainer'>You have an income of 10 credits this month and {creditsFromLastMonth} credit(s) of savings.</div>
             <div className='savingsContainer'>
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
-                        <div className='savingsForegroundBar' style={{width:`${credits*26.611}px`}} />
+                        <div className='savingsForegroundBar' style={{width:`${credits*475/(10+Number(creditsFromLastMonth))}px`}} />
                     </div>
                 </div>
                 <div className='savingsBottomRow'>
@@ -33,11 +46,9 @@ export default function FirstSimulation() {
                 </div>
             </div>
             <div className='resourcesContainer'>
-                <Resource creditType='Food' numCredits={credits} setCredits={setCredits} />
-                <Resource creditType='Shelter' numCredits={credits} setCredits={setCredits} />
-                <Resource creditType='Water' numCredits={credits} setCredits={setCredits} />
+                {resourceList}
             </div>
-            <Link href={{pathname: '/simulation2', query: credits}}><h2 className='openingButton nextButton' >Next month</h2></Link>
+            <Link href={{pathname: '/simulation3', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton nextButton' >Next month</h2></Link>
         </main>
         
     )

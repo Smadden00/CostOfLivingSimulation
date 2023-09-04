@@ -1,11 +1,19 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from 'next/navigation'
 import Resource from './resource';
 import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(12);
+    const [credits, setCredits]=useState(14);
+    
+    const searchParams = useSearchParams();
+    const creditsFromLastMonth = searchParams.get('creditsFromLastMonth');
+
+    useEffect( () => {
+        setCredits(credits+Number(creditsFromLastMonth));
+    }, []);
 
     const resourcesData=[
         {creditType: 'Housing', descriptionArray: ['You have no housing.', 'You have a small 1-bedroom apartment with no yard.', 'You have a 2-bedroom apartment with a small yard.', 'You have a 3-bedroom house with a spacious yard.']},
@@ -20,17 +28,16 @@ export default function FirstSimulation() {
         return <Resource dataObject={resourceObject} numCredits={credits} setCredits={setCredits} key={i}/>
     });
 
-
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <h1 className='simulationTitle'>Simulation 1</h1>
-            <h2 className='simulationDescription'>In this simulation you have a spouse and two children.</h2>
-            <div className='creditsContainer'>You have an income of 12 credits this month.</div>
+            <h1 className='simulationTitle'>Simulation 3</h1>
+            <h2 className='simulationDescription'>Your household applies for and receives FoodShare.</h2>
+            <div className='creditsContainer'>You have 14 credits of income this month and {creditsFromLastMonth} credit(s) of savings.</div>
             <div className='savingsContainer'>
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
-                        <div className='savingsForegroundBar' style={{width:`${credits*475/12}px`}} />
+                        <div className='savingsForegroundBar' style={{width:`${credits*475/(14+Number(creditsFromLastMonth))}px`}} />
                     </div>
                 </div>
                 <div className='savingsBottomRow'>
@@ -41,8 +48,7 @@ export default function FirstSimulation() {
             <div className='resourcesContainer'>
                 {resourceList}
             </div>
-            
-            <Link href={{pathname: '/simulation2', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton nextButton' >Next month</h2></Link>
+            <Link href={{pathname: '/endOfSimulation'}}><h2 className='openingButton nextButton' >Next month</h2></Link>
         </main>
         
     )
