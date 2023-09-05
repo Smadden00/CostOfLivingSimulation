@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(12);
+    const [credits, setCredits]=useState(6);
 
     const resourcesData=[
         {creditType: 'Housing', descriptionArray: ['You have no housing.', 'You have a small 1-bedroom apartment with no yard.', 'You have a 2-bedroom apartment with a small yard.', 'You have a 3-bedroom house with a spacious yard.']},

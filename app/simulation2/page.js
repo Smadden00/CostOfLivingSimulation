@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(10);
+    const [credits, setCredits]=useState(4);
     
     const searchParams = useSearchParams();
     const creditsFromLastMonth = searchParams.get('creditsFromLastMonth');

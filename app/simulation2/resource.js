@@ -4,14 +4,14 @@ import NextDescription from './nextDescription'
 
 export default function Resource({dataObject, numCredits, setCredits}) {
 
-    const [resourceCredits, setResourceCredits] = useState(0);
+    const [resourceCredits, setResourceCredits] = useState(1);
     const color = (resourceCredits === 0 ? '#5D4A44' : (resourceCredits===1 ? '#CF202A' : (resourceCredits===2 ? '#FFD700' : '#4E9B47')))
     const {creditType, descriptionArray} = dataObject;
 
     const [viewNextDescription, setViewNextDescription] = useState(undefined);
 
     const buttonAddClass = resourceCredits === 3 || numCredits === 0? 'buttonDisabled' : 'button'
-    const buttonSubtractClass = resourceCredits === 0 ? 'buttonDisabled' : 'button'
+    const buttonSubtractClass = resourceCredits === 1 ? 'buttonDisabled' : 'button'
 
     return (
         <div className='resourceContainer' style={{borderColor: color}}>
@@ -21,7 +21,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
             <div className='buttonsContainer'>
                 <button className={buttonSubtractClass}
                     onClick={() => {
-                        if(resourceCredits>0){
+                        if(resourceCredits>1){
                             setResourceCredits(resourceCredits-1);
                             setCredits(numCredits+1);
                         }
