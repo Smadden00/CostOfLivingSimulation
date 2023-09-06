@@ -5,7 +5,8 @@ import NextDescription from './nextDescription'
 export default function Resource({dataObject, numCredits, setCredits}) {
 
     const [resourceCredits, setResourceCredits] = useState(1);
-    const color = (resourceCredits === 0 ? '#5D4A44' : (resourceCredits===1 ? '#CF202A' : (resourceCredits===2 ? '#FFD700' : '#4E9B47')))
+    const color = resourceCredits===1 ? '#CF202A' : (resourceCredits===2 ? '#FFD700' : '#4E9B47')
+    const nextColor = resourceCredits===1 ? '#FFD700' : '#4E9B47';
     const {creditType, descriptionArray} = dataObject;
 
     const [viewNextDescription, setViewNextDescription] = useState(undefined);
@@ -42,7 +43,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                     onMouseEnter={e => {
                         if(numCredits===0 && resourceCredits<3){
                             console.log(descriptionArray[resourceCredits+1]);
-                            setViewNextDescription(<NextDescription description={descriptionArray[resourceCredits+1]}/>)
+                            setViewNextDescription(<NextDescription borderColor={nextColor} description={descriptionArray[resourceCredits+1]}/>)
                         }
                     }}
                     onMouseLeave={e => {

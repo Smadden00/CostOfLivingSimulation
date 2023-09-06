@@ -32,7 +32,7 @@ export default function FirstSimulation() {
 
 
     return (
-        <main className="flex min-h-screen flex-col items-center">
+        <main className="flex min-h-screen flex-col">
             <h1 className='simulationTitle'>Month 2</h1>
             <h2 className='simulationDescription'>This month, your spouse loses their job. Your family has a lower income than last month.</h2>
             <h2 className='simulationDescription'>{secondaryDescription}</h2>
@@ -40,7 +40,7 @@ export default function FirstSimulation() {
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
-                        <div className='savingsForegroundBar' style={{width:`${credits*475/(10+Number(creditsFromLastMonth))}px`}} />
+                        <div className='savingsForegroundBar' style={{width:`${credits*475/(4+Number(creditsFromLastMonth))}px`}} />
                     </div>
                 </div>
                 <div className='savingsBottomRow'>
@@ -52,7 +52,7 @@ export default function FirstSimulation() {
                 {resourceList}
             </div>
             <div className='nextButtonContainer'>
-                <Link href={{pathname: '/endOfSimulation'}}><h2 className='openingButton' >Next month</h2></Link>
+                <Link href={{pathname: '/simulation3', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton' >Next month</h2></Link>
             </div>
         </main>
         
