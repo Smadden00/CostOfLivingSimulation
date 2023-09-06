@@ -32,7 +32,7 @@ export default function FirstSimulation() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <h1 className='simulationTitle'>Simulation 3</h1>
+            <h1 className='simulationTitle'>Month 3</h1>
             <h2 className='simulationDescription'>This month, your household applies for and receives FoodShare.</h2>
             <h2 className='simulationDescription'>{secondaryDescription}</h2>
             <div className='savingsContainer'>
