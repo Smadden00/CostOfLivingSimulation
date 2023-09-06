@@ -195,8 +195,9 @@ body {
 }
 
 /* Next buttons */
-.nextButton{
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+.nextButtonContainer{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-right: 20px;
 }

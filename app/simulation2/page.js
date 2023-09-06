@@ -51,7 +51,9 @@ export default function FirstSimulation() {
             <div className='resourcesContainer'>
                 {resourceList}
             </div>
-            <Link href={{pathname: '/simulation3', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton nextButton' >Next month</h2></Link>
+            <div className='nextButtonContainer'>
+                <Link href={{pathname: '/endOfSimulation'}}><h2 className='openingButton' >Next month</h2></Link>
+            </div>
         </main>
         
     )
