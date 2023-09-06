@@ -13,7 +13,7 @@ export default function FirstSimulation() {
         {creditType: 'Utilities', descriptionArray: ['You have no electric, heating, A/C, hot water, or wifi.', 'You have electric and unrelieble heating. You have no hot water, A/C, or wifi.', 'You have electric, heating, low speed wifi, and unreliable hot water. You have no A/C.', 'You have electric, heating, A/C, hot water, and high speed wifi.']},
         {creditType: 'Education', descriptionArray: ['Your children have no education.', 'Your first grader goes to public school, but you have no day care for your youngest.','Your first grader goes to public school, and you have morning pre-k for your youngest.','Your first grader goes to public school, and you have all day pre-k for your youngest.']},
         {creditType: 'Health Care', descriptionArray: ['Your family has no health care coverage.','Your children have health care coverage with a very high deductible.','Your children and one parent has health care coverage.','Everyone in your family has health care coverage.']},
-        {creditType: 'Food', descriptionArray: ['Your family struggles to get any food each day.','Your family reliable gets 2 meals a day with limited access to fresh produce.','Your family gets 3 meals a day most days of the week. You have limited access to fresh produce.','Your entire family gets 3 health meals a day.']},
+        {creditType: 'Food', descriptionArray: ['Your family struggles to get any food each day.','Your family reliably gets 2 meals a day with limited access to fresh produce.','Your family gets 3 meals a day most days of the week. You have limited access to fresh produce.','Your entire family gets 3 health meals a day.']},
     ]
 
     const resourceList = resourcesData.map((resourceObject, i)=> {
