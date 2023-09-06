@@ -55,12 +55,6 @@ body {
   font-size: large;
 }
 
-.creditsContainer{
-  font-family: Helvetica, Sans-Serif;
-  font-size: x-large;
-  padding-top: 20px;
-}
-
 /* Savings */
 
 .savingsNumber{
@@ -87,7 +81,7 @@ body {
 }
 
 .savingsContainer{
-  padding-top: 30px;
+  padding-top: 10px;
   width: 50%;
 }
 
