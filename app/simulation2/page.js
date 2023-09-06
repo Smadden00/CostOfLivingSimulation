@@ -28,11 +28,14 @@ export default function FirstSimulation() {
         return <Resource dataObject={resourceObject} numCredits={credits} setCredits={setCredits} key={i}/>
     });
 
+    const secondaryDescription = creditsFromLastMonth==1 ? 'Your family has an income of 10 credits this month and 1 credit of savings.' : `Your family has an income of 10 credits this month and ${creditsFromLastMonth} credits of savings.`;
+
+
     return (
         <main className="flex min-h-screen flex-col items-center">
             <h1 className='simulationTitle'>Simulation 2</h1>
-            <h2 className='simulationDescription'>Your spouse has just lost their job, so you have less income than last month. Hopefully you have savings left over from last month.</h2>
-            <div className='creditsContainer'>You have an income of 10 credits this month and {creditsFromLastMonth} credit(s) of savings.</div>
+            <h2 className='simulationDescription'>This month, your spouse loses their job. Your family has a lower income than last month.</h2>
+            <h2 className='simulationDescription'>{secondaryDescription}</h2>
             <div className='savingsContainer'>
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
