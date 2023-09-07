@@ -9,7 +9,10 @@ export default function Home() {
       Living like this each day consumes energy and can make planning ahead and problem solving much harder than
        it may be for someone that is living with abundance. 
       It is important to learn what living with a scarcity mindset is like so that we can empathize with what our clients experience every day and deliver them a better product.</h2>
-      <Link href='/simulation1'><h2 className='openingButton'>Begin the simulation</h2></Link>
+      <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
+        <Link href='/simulation1'><h2 className='openingButton'>Individual Simulation</h2></Link>
+        <Link href='/groupSimulation1'><h2 className='openingButton'>Group Simulation</h2></Link>
+      </div>
     </main>
   )
 }

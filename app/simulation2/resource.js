@@ -47,7 +47,6 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                     }}
                     onMouseEnter={e => {
                         if(numCredits===0 && resourceCredits<3){
-                            console.log(descriptionArray[resourceCredits+1]);
                             setViewNextDescription(<NextDescription borderColor={nextColor} description={descriptionArray[resourceCredits+1]}/>)
                         }
                     }}
