@@ -22,7 +22,7 @@ export default function FirstSimulation() {
 
 
     return (
-        <main className="flex min-h-screen flex-col">
+        <main className="flex flex-col">
             <h1 className='simulationTitle'>Month 1</h1>
             <h2 className='simulationDescription'>Throughout this simulation, you are a spouse and a parent of two children.</h2>
             <h2 className='simulationDescription'>This month your family has an income of 12 credits.</h2>
@@ -30,7 +30,9 @@ export default function FirstSimulation() {
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
-                        <div className='savingsForegroundBar' style={{width:`${credits*475/6}px`}} />
+                        <div className='savingsBackgroundBar' style={{width:'475px'}} >
+                            <div className='savingsForegroundBar' style={{width:`${credits*475/6}px`}} />
+                        </div>
                     </div>
                 </div>
                 <div className='savingsBottomRow'>

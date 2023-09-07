@@ -31,7 +31,7 @@ export default function FirstSimulation() {
     const secondaryDescription = creditsFromLastMonth==1 ? 'Your family has an income of 14 credits this month and 1 credit of savings.' : `Your family has an income of 14 credits this month and ${creditsFromLastMonth} credits of savings.`;
 
     return (
-        <main className="flex min-h-screen flex-col">
+        <main className="flex flex-col">
             <h1 className='simulationTitle'>Month 3</h1>
             <h2 className='simulationDescription'>This month, your household applies for and receives FoodShare.</h2>
             <h2 className='simulationDescription'>{secondaryDescription}</h2>
@@ -39,7 +39,9 @@ export default function FirstSimulation() {
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
-                        <div className='savingsForegroundBar' style={{width:`${credits*475/(8+Number(creditsFromLastMonth))}px`}} />
+                        <div className='savingsBackgroundBar' style={{width:'475px'}} >
+                            <div className='savingsForegroundBar' style={{width: `${credits*475/(8+Number(creditsFromLastMonth))}px`}} />
+                        </div>
                     </div>
                 </div>
                 <div className='savingsBottomRow'>

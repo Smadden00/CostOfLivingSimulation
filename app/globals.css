@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 /*
-match the aesthetic of the cards
-maybe the same thickness but a lighter
-make the background white
-adjust the bar to be longer
-make the savings the same size as all other text
-card header small and bold
 add icons for each card
 */
 
@@ -16,6 +10,26 @@ add icons for each card
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --button-border: rgb(211, 211, 211);
+
+}
+
+.header{
+  width: 100%;
+  height: 8vh;
+  background-color: blue;
+  color: white;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+
+.footer{
+  width: 100%;
+  height: 8vh;
+  background-color: blue;
 }
 
 main {
@@ -23,52 +37,46 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 84vh
 }
 
 /*opening page*/
 
 .openingHeader{
-  font-family: Helvetica, Sans-Serif;
+  font-family: Sans-Serif;
   font-size: xx-large;
 }
 
 .openingDescription{
-  padding: 0px 100px;
+  padding: 0px 40px;
   text-align: center;
 }
 
 .openingButton{
   padding: 15px 25px;
-  background-color: rgb(4, 180, 255);
+  background-color: blue;
   border-radius: 10px;
   border: 3px transparent solid;
+  color: white;
 }
 
 .openingButton:hover{
-  border: 3px black solid;
+  border: 3px blue solid;
+  background-color: white;
+  color: blue;
 }
 
 /******* Simulations *******/
 
 .simulationTitle{
-  font-family: Helvetica, Sans-Serif;
+  font-family: Sans-Serif;
   font-size: xx-large;
   padding-top: 15px;
   padding-left: 20px;
 }
 
 .simulationDescription{
-  font-family: Helvetica, Sans-Serif;
+  font-family: Sans-Serif;
   font-size: large;
   padding-left: 20px;
 }
@@ -109,9 +117,21 @@ body {
 }
 
 .savingsForegroundBar{
-  height: 22px;
-  background-color: rgb(4, 180, 255);
+  height: 5px;
+  background-color: blue;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
+.savingsBackgroundBar{
+  height: 5px;
+  background-color: var(--button-border);
+  border-radius: 10px;
+  position: relative;
+}
+
 
 /* Resources */
 
@@ -137,8 +157,8 @@ body {
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.542);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: 4px solid;
-  border-radius: 10px;
+  border: 2px solid;
+  border-radius: 7px;
   padding: 8px 15px 15px 15px;
   align-items: center;
   width: 300px;
@@ -153,40 +173,56 @@ body {
 .buttonsContainer{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 5px;
+  background-color: rgb(246, 246, 246);
+  border: 1px var(--button-border) solid;
+  border-radius: 5px;
   position: relative;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.subtract{
+  border-radius: 4px 0px 0px 4px;
+}
+
+.add{
+  border-radius: 0px 4px 4px 0px;
 }
 
 .button{
-  width: 20px;
-  padding: 10px 30px 10px 10px;
-  border-radius: 20px;
-  border: 2px transparent solid;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px transparent solid;
 }
 
 .button:hover{
-  border: 2px black solid;
-  background-color: rgb(4, 180, 255);
+  background-color: rgb(230, 230, 230);
 }
 
 .buttonDisabled{
-  width: 20px;
-  padding: 10px 30px 10px 10px;
-  border-radius: 20px;
-  border: 2px transparent solid;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px transparent solid;
 }
 
-.buttonDisabled:hover{
-  border: 2px black solid;
-  background-color: rgb(184, 184, 184);
+.resourceNumberContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  background-color: white;
+  border-right: 1px var(--button-border) solid;
+  border-left: 1px var(--button-border) solid;
 }
 
 .nextDescriptionContainter{
   width: 200px;
   position: absolute;
   bottom: 0px;
-  left: 120px;
+  left: 110px;
   background-color: rgb(255, 255, 255);
   padding: 10px;
   border: 2px solid;
@@ -199,10 +235,10 @@ body {
   font-weight: 550;
 }
 
+
 .resourceNumber{
-  font-size: large;
-  width: 11px;
-  /*background-color: green;*/
+  font-size: medium;
+  height: 100%;
 }
 
 .descriptionContainer{
