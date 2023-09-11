@@ -1,5 +1,7 @@
 'use client'
 import { useState } from "react";
+import styles from "./groupSimulation1.module.css";
+
 
 export default function Resource({dataObject, numCredits, setCredits}) {
 
@@ -10,8 +12,8 @@ export default function Resource({dataObject, numCredits, setCredits}) {
     console.log(resourceCredits);
 
     return (
-        <div className='resourceContainer' style={{borderColor: color}}>
-            <div className='labelContainer'>
+        <div className={`resourceContainer ${styles.resourceContainer}`} style={{borderColor: color}}>
+            <div className={styles.resourceTitleContainer}>
                 <h2 className='resourceName'>{creditType}:</h2>
             </div>
             <label>
@@ -24,7 +26,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                             setCredits(numCredits+resourceCredits-1);
                             setResourceCredits(1);
                         }
-                    }} 
+                    }}
                 /> {descriptionArray[0]}
             </label>
             <label>
@@ -38,6 +40,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                             setResourceCredits(2);
                         }
                     }} 
+                    disabled={2-resourceCredits <= numCredits ? false : true}
                 /> {descriptionArray[1]}
             </label>
             <label>
@@ -51,6 +54,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                             setResourceCredits(3);
                         }
                     }} 
+                    disabled={3-resourceCredits <= numCredits ? false : true}
                 /> {descriptionArray[2]}
             </label>
         </div>
