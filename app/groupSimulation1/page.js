@@ -30,7 +30,7 @@ export default function FirstSimulation() {
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
                         <div className='savingsBackgroundBar' style={{width:'475px'}} >
-                            <div className='savingsForegroundBar' style={{width: `${credits*475/4}px`}} />
+                            <div className='savingsForegroundBar' style={{width: `${credits*475/6}px`}} />
                         </div>
                     </div>
                 </div>
