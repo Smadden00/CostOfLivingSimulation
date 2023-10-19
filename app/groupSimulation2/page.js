@@ -16,25 +16,24 @@ export default function FirstSimulation() {
     }, []);
 
     const resourcesData=[
-        {creditType: 'Housing', descriptionArray: ['You have no housing.', 'You have a small 1-bedroom apartment with no yard.', 'You have a 2-bedroom apartment with a small yard.', 'You have a 3-bedroom house with a spacious yard.']},
-        {creditType: 'Transportation', descriptionArray: ['You have no access to transportation.', 'You have limited access to public transit.', 'You have access to bikes and public transit.', 'You have access to a car.']},
-        {creditType: 'Utilities', descriptionArray: ['You have no electric, heating, A/C, hot water, or wifi.', 'You have electric and unrelieble heating. You have no hot water, A/C, or wifi.', 'You have electric, heating, low speed wifi, and unreliable hot water. You have no A/C.', 'You have electric, heating, A/C, hot water, and high speed wifi.']},
-        {creditType: 'Education', descriptionArray: ['Your children have no education.', 'Your first grader goes to public school, but you have no day care for your youngest.','Your first grader goes to public school, and you have morning pre-k for your youngest.','Your first grader goes to public school, and you have all day pre-k for your youngest.']},
-        {creditType: 'Health Care', descriptionArray: ['Your family has no health care coverage.','Your children have health care coverage with a very high deductible.','Your children and one parent has health care coverage.','Everyone in your family has health care coverage.']},
-        {creditType: 'Food', descriptionArray: ['Your family struggles to get any food each day.','Your family reliably gets 2 meals a day with limited access to fresh produce.','Your family gets 3 meals a day most days of the week. You have limited access to fresh produce.','Your entire family gets 3 health meals a day.']},
+        {creditType: 'Housing', descriptionArray: ['1-bedroom apartment with no yard.', '2-bedroom apartment with yard.', '3-bedroom apartment with yard.']},
+        {creditType: 'Transportation', descriptionArray: ['Limited access to public transit.', 'Access to bikes and public transit.', 'Access to a car.']},
+        {creditType: 'Utilities', descriptionArray: ['Electricity. Unreliable heating, A/C, and hot water. No wifi.', 'Electricity. Heating. A/C unit in main bedroom. Limited hot water. Slow wifi.', 'Electricity. Heating. Central A/C. Hot water. High-speed internet.']},
+        {creditType: 'Education', descriptionArray: ['Public school for first grader. No day care for youngest.','Public school for first grader. Morning pre-k for youngest.','Public school for first grader. All-day pre-k for youngest.']},
+        {creditType: 'Health Care', descriptionArray: ['No insurance.','One adult and both children are covered.','Whole family is covered.']},
+        {creditType: 'Food', descriptionArray: ['Your family reliably gets 2 meals a day with limited access to fresh produce.','Your family gets 3 meals a day some days of the week. You have limited access to fresh produce.','Your entire family gets 3 healthy meals a day.']},
     ]
 
     const resourceList = resourcesData.map((resourceObject, i)=> {
         return <Resource dataObject={resourceObject} numCredits={credits} setCredits={setCredits} key={i}/>
     });
 
-    const secondaryDescription = creditsFromLastMonth==1 ? 'Your family has an income of 10 credits this month and 1 credit of savings.' : `Your family has an income of 10 credits this month and ${creditsFromLastMonth} credits of savings.`;
+    const secondaryDescription = creditsFromLastMonth==1 ? 'Select the number of credits to spend in each category. Your family has an income of 10 credits this month and 1 credit of savings.' : `Your family has an income of 10 credits this month and ${creditsFromLastMonth} credits of savings.`;
 
 
     return (
         <main className="flex flex-col">
             <h1 className='simulationTitle'>Month 2</h1>
-            <h2 className='simulationDescription'>This month, your spouse loses their job.</h2>
             <h2 className='simulationDescription'>{secondaryDescription}</h2>
             <div className='savingsContainer'>
                 <div className='savingsTopRow'>
@@ -54,7 +53,7 @@ export default function FirstSimulation() {
                 {resourceList}
             </div>
             <div className='nextButtonContainer'>
-                <Link href={{pathname: '/groupSimulation3', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton' >Next month</h2></Link>
+                <Link href={{pathname: '/simulation3IntroPage', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton' >Next month</h2></Link>
             </div>
         </main>
         

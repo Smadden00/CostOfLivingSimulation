@@ -2,16 +2,14 @@ import './globals.css'
 import Link from 'next/link';
 
 export default function Home() {
+
+  const text = 'Welcome to the Cost of Living Simulation! In this simulation, participants take on the identity of a low-income family living on a limited budget and are challenged to effectively allocate resources over time. This experience develops a more complete understanding of issues surrounding poverty.'
+
   return (
     <main className="flex flex-col items-center justify-between p-24">
-      <h2 className='openingDescription'>Welcome to the Cost of Living Simulation. This exercise will walk you through what it is like to live in a scarcity mindset; 
-      when you barely have enough to scrape by. 
-      Living like this each day consumes energy and can make planning ahead and problem solving much harder than
-       it may be for someone that is living with abundance. 
-      It is important to learn what living with a scarcity mindset is like so that we can empathize with what our clients experience every day and deliver them a better product.</h2>
+      <h2 className='openingDescription'>{text}</h2>
       <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
-        <Link href='/simulation1'><h2 className='openingButton'>Individual Simulation</h2></Link>
-        <Link href='/groupSimulation1'><h2 className='openingButton'>Group Simulation</h2></Link>
+        <Link href={{pathname: '/simulation1IntroPage', query: {introPageNum:0}}}><h2 className='openingButton'>Begin Simulation</h2></Link>
       </div>
     </main>
   )
