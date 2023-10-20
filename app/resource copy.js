@@ -27,6 +27,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                             setResourceCredits(1);
                         }
                     }}
+                    disabled={1-resourceCredits <= numCredits ? false : true}
                 /> {descriptionArray[0]}
             </label>
             <label>
