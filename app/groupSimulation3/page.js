@@ -1,12 +1,12 @@
 'use client'
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation'
-import Resource from './resource';
+import Resource from '../resource copy';
 import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(8);
+    const [credits, setCredits]=useState(14);
     
     const searchParams = useSearchParams();
     const creditsFromLastMonth = searchParams.get('creditsFromLastMonth');
@@ -28,25 +28,24 @@ export default function FirstSimulation() {
         return <Resource dataObject={resourceObject} numCredits={credits} setCredits={setCredits} key={i}/>
     });
 
-    const secondaryDescription = creditsFromLastMonth==1 ? 'Your family has an income of 14 credits this month and 1 credit of savings.' : `Your family has an income of 14 credits this month and ${creditsFromLastMonth} credits of savings.`;
+    const secondaryDescription = creditsFromLastMonth==1 ? 'Select the number of credits to spend in each category. Your family has an income of 14 credits this month and 1 credit of savings.' : `Select the number of credits to spend in each category. Your family has an income of 14 credits this month and ${creditsFromLastMonth} credits of savings.`;
 
     return (
         <main className="flex flex-col">
             <h1 className='simulationTitle'>Month 3</h1>
-            <h2 className='simulationDescription'>This month, your household applies for and receives FoodShare.</h2>
             <h2 className='simulationDescription'>{secondaryDescription}</h2>
             <div className='savingsContainer'>
                 <div className='savingsTopRow'>
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
                         <div className='savingsBackgroundBar' style={{width:'475px'}} >
-                            <div className='savingsForegroundBar' style={{width: `${credits*475/(8+Number(creditsFromLastMonth))}px`}} />
+                            <div className='savingsForegroundBar' style={{width: `${credits*475/(14+Number(creditsFromLastMonth))}px`}} />
                         </div>
                     </div>
                 </div>
                 <div className='savingsBottomRow'>
                     <div className="savingsBottomRowSpacer"/>
-                    <h2 className="savingsDescription">These credits will carry over to next month.</h2>
+                    <h2 className="savingsDescription"></h2>
                 </div>
             </div>
             <div className='resourcesContainer'>

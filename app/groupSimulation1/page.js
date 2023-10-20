@@ -1,11 +1,11 @@
 'use client'
 import { useState } from "react";
-import Resource from './resource';
+import Resource from '../resource copy';
 import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(6);
+    const [credits, setCredits]=useState(12);
 
     const resourcesData=[
         {creditType: 'Housing', descriptionArray: ['1-bedroom apartment with no yard.', '2-bedroom apartment with yard.', '3-bedroom apartment with yard.']},
@@ -30,7 +30,7 @@ export default function FirstSimulation() {
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
                         <div className='savingsBackgroundBar' style={{width:'475px'}} >
-                            <div className='savingsForegroundBar' style={{width: `${credits*475/6}px`}} />
+                            <div className='savingsForegroundBar' style={{width: `${credits*475/12}px`}} />
                         </div>
                     </div>
                 </div>

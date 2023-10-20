@@ -8,7 +8,7 @@ export default function SimulationIntroPage() {
         header: 'Month 1: Allocating Resources',
         description: 'You have a household consisting of your spouse and two children aged four and seven. Both you and your spouse currently have minimum wage jobs. With your monthly household income, your family has 12 credits to use across six categories:',
         list: ['Housing', 'Utilities','Transportation','Health Care','Education','Food'],
-        description2: 'Any remaining credits will be put into your family\'s savings.'
+        description2: 'Any remaining credits will be put into your family\'s savings. You can use your acrrued savings in the following months.'
       };
 
     const listItems = pageContents.list.map((item, i) => <li key={i}>{item}</li>);

@@ -1,12 +1,12 @@
 'use client'
 import { useState } from "react";
-import styles from "./groupSimulation1.module.css";
+import styles from "./groupSimulation1/groupSimulation1.module.css";
 
 
 export default function Resource({dataObject, numCredits, setCredits}) {
 
-    const [resourceCredits, setResourceCredits] = useState(1);
-    const color = resourceCredits===1 ? '#CF202A' : (resourceCredits===2 ? '#FFD700' : '#4E9B47')
+    const [resourceCredits, setResourceCredits] = useState(0);
+    const color = resourceCredits===1 ? '#CF202A' : (resourceCredits===2 ? '#FFD700' : (resourceCredits===3 ?'#4E9B47': '#000000'));
     const {creditType, descriptionArray} = dataObject;
         
     console.log(resourceCredits);

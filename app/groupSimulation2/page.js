@@ -1,12 +1,12 @@
 'use client'
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'next/navigation'
-import Resource from './resource';
+import Resource from '../resource copy';
 import Link from 'next/link';
 
 
 export default function FirstSimulation() {
-    const [credits, setCredits]=useState(4);
+    const [credits, setCredits]=useState(10);
     
     const searchParams = useSearchParams();
     const creditsFromLastMonth = searchParams.get('creditsFromLastMonth');
@@ -28,7 +28,7 @@ export default function FirstSimulation() {
         return <Resource dataObject={resourceObject} numCredits={credits} setCredits={setCredits} key={i}/>
     });
 
-    const secondaryDescription = creditsFromLastMonth==1 ? 'Select the number of credits to spend in each category. Your family has an income of 10 credits this month and 1 credit of savings.' : `Your family has an income of 10 credits this month and ${creditsFromLastMonth} credits of savings.`;
+    const secondaryDescription = creditsFromLastMonth==1 ? 'Select the number of credits to spend in each category. Your family has an income of 10 credits this month and 1 credit of savings.' : `Select the number of credits to spend in each category. Your family has an income of 10 credits this month and ${creditsFromLastMonth} credits of savings.`;
 
 
     return (
@@ -40,7 +40,7 @@ export default function FirstSimulation() {
                     <h2 className='savingsNumber'>Savings: {credits}</h2>
                     <div className='savingsBarContainer'>
                         <div className='savingsBackgroundBar' style={{width:'475px'}} >
-                            <div className='savingsForegroundBar' style={{width: `${credits*475/(4+Number(creditsFromLastMonth))}px`}} />
+                            <div className='savingsForegroundBar' style={{width: `${credits*475/(10+Number(creditsFromLastMonth))}px`}} />
                         </div>
                     </div>
                 </div>
