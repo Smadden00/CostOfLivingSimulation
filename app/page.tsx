@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Home() {
 
-  const text = 'Welcome to the Cost of Living Simulation! In this simulation, participants take on the identity of a low-income family living on a limited budget and are challenged to effectively allocate resources over time. This experience develops a more complete understanding of issues surrounding poverty.'
+  const text = 'Welcome to the Cost of Living Simulation! In this simulation, participants simulate the experience of a low-income family living on a limited budget and are challenged to effectively allocate resources over time. This experience develops a more complete understanding of issues surrounding poverty.'
 
   return (
     <main className="flex flex-col items-center justify-between p-24">
