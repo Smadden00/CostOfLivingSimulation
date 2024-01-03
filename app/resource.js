@@ -9,55 +9,32 @@ export default function Resource({dataObject, numCredits, setCredits}) {
     const color = resourceCredits===1 ? '#CF202A' : (resourceCredits===2 ? '#FFD700' : (resourceCredits===3 ?'#4E9B47': '#000000'));
     const {creditType, descriptionArray} = dataObject;
         
-    console.log(resourceCredits);
+    const inputs = descriptionArray.map((description, i) => {
+        const resourceNum = i+1;
+        return (
+            <label key={i}>
+                <input 
+                    type="radio" 
+                    name={creditType} 
+                    checked={resourceCredits==resourceNum} 
+                    onChange={()=>{
+                        if (resourceNum-resourceCredits <= numCredits) {
+                            setCredits(numCredits+resourceCredits-resourceNum);
+                            setResourceCredits(resourceNum);
+                        }
+                    }}
+                    disabled={resourceNum-resourceCredits <= numCredits ? false : true}
+                />{resourceNum}c: {description}
+            </label>
+        )
+    });
 
     return (
         <div className={`resourceContainer ${styles.resourceContainer}`} style={{borderColor: color}}>
             <div className={styles.resourceTitleContainer}>
                 <h2 className='resourceName'>{creditType}:</h2>
             </div>
-            <label>
-                <input 
-                    type="radio" 
-                    name={creditType} 
-                    checked={resourceCredits==1} 
-                    onChange={()=>{
-                        if (1-resourceCredits <= numCredits) {
-                            setCredits(numCredits+resourceCredits-1);
-                            setResourceCredits(1);
-                        }
-                    }}
-                    disabled={1-resourceCredits <= numCredits ? false : true}
-                /> {descriptionArray[0]}
-            </label>
-            <label>
-                <input 
-                    type="radio" 
-                    name={creditType} 
-                    checked={resourceCredits==2} 
-                    onChange={()=>{
-                        if (2-resourceCredits <= numCredits) {
-                            setCredits(numCredits+resourceCredits-2);
-                            setResourceCredits(2);
-                        }
-                    }} 
-                    disabled={2-resourceCredits <= numCredits ? false : true}
-                /> {descriptionArray[1]}
-            </label>
-            <label>
-                <input 
-                    type="radio" 
-                    name={creditType} 
-                    checked={resourceCredits==3} 
-                    onChange={()=>{
-                        if (3-resourceCredits <= numCredits) {
-                            setCredits(numCredits+resourceCredits-3);
-                            setResourceCredits(3);
-                        }
-                    }} 
-                    disabled={3-resourceCredits <= numCredits ? false : true}
-                /> {descriptionArray[2]}
-            </label>
+            {inputs}
         </div>
   )}
   

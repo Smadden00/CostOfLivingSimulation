@@ -13,7 +13,7 @@ export default function SimulationIntroPage() {
         creditsExplanation: 'You will have up to three credits to spend on each resource. The description of each resource credit will be displayed as follows:'
       };
 
-    const resourceObject = {creditType: 'Example Resource', descriptionArray: ['Description of using 1 credit.', 'Description of using 2 credits.', 'Description of using 3 credits.']};
+    const resourceObject = {creditType: 'Example Resource', descriptionArray: ['Description of using 1 credit on this resource.', 'Description of using 2 credits on this resource.', 'Description of using 3 credits on this resource.']};
 
     const listItems = pageContents.list.map((item, i) => <li key={i}>{item}</li>);
 

@@ -46,6 +46,5 @@ export default function FirstSimulation() {
                 <Link href={{pathname: '/simulation2IntroPage', query: {creditsFromLastMonth:credits}}}><h2 className='openingButton' >Next month</h2></Link>
             </div>
         </main>
-        
     )
 }
