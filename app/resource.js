@@ -24,7 +24,7 @@ export default function Resource({dataObject, numCredits, setCredits}) {
                         }
                     }}
                     disabled={resourceNum-resourceCredits <= numCredits ? false : true}
-                />{resourceNum}c: {description}
+                />{resourceNum} cr: {description}
             </label>
         )
     });
