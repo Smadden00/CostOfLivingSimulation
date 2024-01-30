@@ -1,0 +1,22 @@
+.introContainer{
+    align-items: center;
+    justify-content: space-around;
+}
+  
+
+.header{
+    font-size: xx-large;
+    padding-top: 24px;
+}
+
+.listStyle{
+    list-style-type: format;
+}
+
+.topSpacing{
+    margin-top: 20px;
+}
+
+.bottomSpacing{
+    margin-bottom: 20px;
+}

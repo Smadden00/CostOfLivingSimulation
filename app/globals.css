@@ -32,27 +32,28 @@ add icons for each card
   background-color: blue;
 }
 
-main {
-  width: 1170px;
+.contentContainer {
+  width: 100vw;
+  max-width: 1170px;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   min-height: 84vh
 }
 
-/*opening page*/
 
-.openingHeader{
-  font-family: Sans-Serif;
-  font-size: xx-large;
+/***** Button ******/
+.buttonContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.openingDescription{
-  padding: 0px 40px;
-  text-align: center;
-}
-
-.openingButton{
+.button{
   padding: 15px 25px;
   background-color: blue;
   border-radius: 10px;
@@ -60,11 +61,7 @@ main {
   color: white;
 }
 
-.openingButton:hover{
-  border: 3px blue solid;
-  background-color: white;
-  color: blue;
-}
+
 
 /******* Simulations *******/
 

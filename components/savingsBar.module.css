@@ -1,0 +1,52 @@
+/*** Savings ***/
+
+.savingsContainer{
+    padding-top: 10px;
+    width: 100%;
+  }
+  
+  .savingsTopRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .savingsNumber{
+    font-size: large;
+    padding-left: 20px;
+  }
+  
+  .savingsBackgroundBar{
+    height: 5px;
+    background-color: var(--button-border);
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .savingsForegroundBar{
+    height: 5px;
+    background-color: blue;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .savingsBottomRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .savingsBottomRowSpacer{
+    width: 105px;
+    height: 10px;
+  }
+  
+  .savingsDescription{
+    font-size: small;
+  }
+  
+  

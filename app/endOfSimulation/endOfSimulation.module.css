@@ -1,0 +1,7 @@
+.container{
+    align-items: center;
+}
+
+.container > * {
+    padding-top: 24px
+}

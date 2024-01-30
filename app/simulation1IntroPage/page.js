@@ -1,6 +1,7 @@
 'use client'
-import Link from 'next/link';
-import Resource from '../resource';
+import Resource from '../../components/resource';
+import styles from './simulation1Intro.module.css'
+import Button from '@/components/button';
 
 export default function SimulationIntroPage() {
 
@@ -13,19 +14,26 @@ export default function SimulationIntroPage() {
         creditsExplanation: 'You will have up to three credits to spend on each resource. The description of each resource credit will be displayed as follows:'
       };
 
-    const resourceObject = {creditType: 'Example Resource', descriptionArray: ['Description of using 1 credit on this resource.', 'Description of using 2 credits on this resource.', 'Description of using 3 credits on this resource.']};
+    const resourceObject = {
+      creditType: 'Example Resource', 
+      descriptionArray: [
+        'Description of using 1 credit on this resource.', 
+        'Description of using 2 credits on this resource.', 
+        'Description of using 3 credits on this resource.'
+      ]
+    };
 
     const listItems = pageContents.list.map((item, i) => <li key={i}>{item}</li>);
 
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      <h1 style={{fontSize:'xx-large', marginTop:'-50px'}}>{pageContents.header}</h1>
-      <h2 style={{marginTop:'20px'}}>{pageContents.description}</h2>
-      <ul style={{marginTop:'20px', listStyleType:'format'}}>{listItems}</ul>
-      <h2 style={{marginTop:'20px', marginBottom:'20px'}}>{pageContents.description2}</h2>
-      <h2 style={{marginTop:'20px', marginBottom:'20px'}}>{pageContents.creditsExplanation}</h2>
+    <main className={`contentContainer ${styles.introContainer}`}>
+      <h1 className={styles.header}>{pageContents.header}</h1>
+      <h2 className={`${styles.topSpacing}`}>{pageContents.description}</h2>
+      <ul className={`${styles.topSpacing} ${styles.listStyle}`}>{listItems}</ul>
+      <h2 className={`${styles.topSpacing} ${styles.bottomSpacing}`}>{pageContents.description2}</h2>
+      <h2 className={`${styles.topSpacing} ${styles.bottomSpacing}`}>{pageContents.creditsExplanation}</h2>
       <Resource dataObject={resourceObject} numCredits={0} setCredits={null} key={1}/>
-      <Link href='/groupSimulation1'><h2 className='openingButton' style={{marginTop:'20px', marginBottom:'-40px'}}>Continue</h2></Link>
+      <Button link={'/groupSimulation1'} text={'Continue'} />
     </main>
   )
 }

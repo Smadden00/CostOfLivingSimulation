@@ -1,0 +1,17 @@
+.pageInformationContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageInformationContainer > * {
+    padding-bottom: 5px;
+}
+
+.container{
+    align-items: center;
+}
+
+.container > * {
+    padding-top: 24px;
+}

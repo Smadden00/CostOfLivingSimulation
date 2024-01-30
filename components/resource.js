@@ -1,7 +1,6 @@
 'use client'
 import { useState } from "react";
-import styles from "./groupSimulation1/groupSimulation1.module.css";
-
+import styles from '../app/simulation.module.css'
 
 export default function Resource({dataObject, numCredits, setCredits}) {
 

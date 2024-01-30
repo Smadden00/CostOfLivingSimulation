@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className='header'> 
-          <div className='headerTitle'>Cost of Living Simulator</div>
+          <div>Cost of Living Simulator</div>
         </div>
         {children}
         <div className='footer'/>
